@@ -5,15 +5,21 @@ const deleteRequest = require("./methods/delete");
 
 //* 1) Server Oluştur
 const server = http.createServer((req, res) => {
+    // frontEnd'e gönderilecek bütün cevaplara eklenecek ve cors hatasını engelleyecek header
+    res.setHeader("Access-Control-Allow-Origin", "*");
+
     switch (req.method) {
         case "GET":
             return getRequest(req, res);
+            break;
 
         case "POST":
             return postRequest(req, res);
+            break;
 
         case "DELETE":
             return deleteRequest(req, res);
+            break;
 
         default:
             // Cevabın durum kodunu belirler
