@@ -1,0 +1,46 @@
+{
+  "movies": [
+    {
+      "id": "213976be-9157-4daa-992b-5b93f68540a6",
+      "title": "The Wolf of Wall Street",
+      "year": "2013",
+      "genre": ["Biography", "Comedy", "Crime"],
+      "rating": "8.2"
+    },
+    {
+      "title": "The Avengers: Infinity war",
+      "year": "2020",
+      "genre": ["Action", "Adventure", "Fantasy"],
+      "rating": "7.9",
+      "id": "3711087e-2863-427e-86d8-1548c3e7b0db"
+    },
+    {
+      "id": "131c8241-fcae-4425-94b7-e410fb285018",
+      "title": "Mission Impossible: Rouge Nation",
+      "year": "2015",
+      "genre": ["Action", "Adventure", "Fantasy"],
+      "rating": "7.9"
+    },
+    {
+      "title": "Spiderman",
+      "year": "2023",
+      "genre": ["Action"],
+      "rating": "8.7",
+      "id": "16395da0-7a20-4ebd-94a5-886cfd99566b"
+    },
+    {
+      "title": "Spiderman",
+      "year": "2023",
+      "genre": ["Action"],
+      "rating": "8.7",
+      "id": "5de9a66b-e31e-4a1d-b4f9-3fc73b8847ed"
+    },
+    {
+      "title": "Spiderman",
+      "year": "2023",
+      "genre": ["Action"],
+      "rating": "8.7",
+      "id": "7c7a1674-1f0b-4998-9ed5-0ad6ada599f8"
+    }
+  ]
+}
