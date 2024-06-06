@@ -1,21 +1,35 @@
-const Card = ({ movie }) => {
+import { Link } from "react-router-dom";
+
+const Card = ({ movie, index }) => {
   return (
-    <div className="border p-2 rounded-md">
-      <div>
+    <Link
+      to={`/movie/${movie.id}`}
+      className="border shadow p-3 rounded-md hover:bg-zinc-100 cursor-pointer transition max-sm:flex max-md:gap-5"
+    >
+      <div className="relative">
         <img
-          src="https://picsum.photos/id/237/200/300"
+          className="rounded w-full max-w-[450px] max-h-[300px] object-cover max-sm:max-h-[150px]"
+          src={`https://picsum.photos/500/70${index}`}
           alt="poster"
         />
-        <span className="font-semibold bg-green-500 p-1 rounded-full text-white">{movie.rating}</span>
+        <span className="absolute top-[-10px] right-[-10px] font-semibold bg-green-500 p-2 rounded-full text-white">
+          {movie.rating}
+        </span>
       </div>
 
-      <h3 className="font-bold mt-4">{movie.title}</h3>
+      <div>
+        <h3 className="font-bold text-2xl sm:text-lg mt-4 line-clamp-1">{movie.title}</h3>
 
-      <div className="text-gray-400 gap-2">
-        <p>{movie.year}</p>
-        <p className="flex gap-2">{movie.genre.map((genre) => <span>{genre}</span>)}</p>
+        <div className="text-gray-400 gap-2">
+          <p>{movie.year}</p>
+          <p className="flex gap-2">
+            {movie.genre.map((genre, i) => (
+              <span key={i}>{genre}</span>
+            ))}
+          </p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
