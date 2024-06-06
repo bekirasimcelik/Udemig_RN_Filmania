@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 
 const Card = ({ movie, index }) => {
+  const r = movie.rating;
+  const color = r > 9 ? "blue" : r > 7.5 ? "green" : r > 5 ? "orange" : "red";
+
   return (
     <Link
       to={`/movie/${movie.id}`}
@@ -12,13 +15,15 @@ const Card = ({ movie, index }) => {
           src={`https://picsum.photos/500/70${index}`}
           alt="poster"
         />
-        <span className="absolute top-[-10px] right-[-10px] font-semibold bg-green-500 p-2 rounded-full text-white">
+        <span style={{background: color}} className="absolute top-[-10px] right-[-10px] font-semibold p-2 rounded-full text-white">
           {movie.rating}
         </span>
       </div>
 
       <div>
-        <h3 className="font-bold text-2xl sm:text-lg mt-4 line-clamp-1">{movie.title}</h3>
+        <h3 className="font-bold text-2xl sm:text-lg mt-4 line-clamp-1">
+          {movie.title}
+        </h3>
 
         <div className="text-gray-400 gap-2">
           <p>{movie.year}</p>
