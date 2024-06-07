@@ -19,6 +19,16 @@ const Detail = () => {
 
   const movie = data?.data;
 
+  const r = movie?.rating;
+  const color = r > 9 ? "blue" : r > 7.5 ? "green" : r > 5 ? "orange" : "red";
+
+  const handleDelete = () => {
+    api
+      .delete(`/movies/${movie.id}`)
+      .then((res) => console.log("basarili"))
+      .catch((err) => console.log("hata", err));
+  };
+
   return (
     <div className="p-10">
       {isLoading ? (
@@ -30,7 +40,10 @@ const Detail = () => {
           <>
             <div>
               <div className="flex justify-end">
-                <button className="bg-red-600 text-white p-2 rounded-md hover:bg-red-400">
+                <button
+                  onClick={handleDelete}
+                  className="bg-red-600 text-white p-2 rounded-md hover:bg-red-400"
+                >
                   <FaTrash />
                 </button>
               </div>
@@ -53,7 +66,10 @@ const Detail = () => {
                   {/* Skor */}
                   <p>
                     <span className="font-semibold me-3">İzleyici Puanı</span>
-                    <span className="p-2 rounded-full text-white font-semibold bg-green-500">
+                    <span
+                      style={{ background: color }}
+                      className="p-2 rounded-full text-white font-semibold"
+                    >
                       {movie.rating}
                     </span>
                   </p>
